@@ -4,12 +4,24 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, world!")
+    # Option A: Leave as string (recommended for simplicity, accept Pyright warning)
+    # return HttpResponse("Hello, world!")
+
+    # Option B: Explicitly encode to bytes (silences Pyright)
+    return HttpResponse("Hello, world!".encode("utf-8"))
 
 
 def kevin(request):
-    return HttpResponse("Hello, Kevin!")
+    # Option A: Leave as string
+    # return HttpResponse("Hello, Kevin!")
+
+    # Option B: Explicitly encode to bytes
+    return HttpResponse("Hello, Kevin!".encode("utf-8"))
 
 
-def greet(request, name):  #
-    return HttpResponse(f"Hello, {name.capitalize()}!")
+def greet(request, name):
+    # Option A: Leave as string
+    # return HttpResponse(f"Hello, {name.capitalize()}!")
+
+    # Option B: Explicitly encode to bytes
+    return HttpResponse(f"Hello, {name.capitalize()}!".encode("utf-8"))
