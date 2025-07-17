@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+# from django.shortcuts import render
 
 
 # Create your views here.
@@ -11,5 +11,5 @@ def kevin(request):
     return HttpResponse("Hello, Kevin!")
 
 
-def greet(request, name):
-    return HttpResponse(f"Hello, {name}!")
+def greet(request, name):  #
+    return HttpResponse(f"Hello, {name.capitalize()}!")
